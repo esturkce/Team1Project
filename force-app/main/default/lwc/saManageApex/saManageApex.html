@@ -1,0 +1,26 @@
+<template>
+	<lightning-card title="All Sales Agent Details" icon-name="standard:groups">
+		<div class="slds-card__body slds-card__body_inner ">
+
+			<template if:true={sadetails.data}>
+			
+				<lightning-layout multiple-rows="true" pull-to-boundary="small" class="salist_container">
+					<template for:each={sadetails.data} for:item="sadetail">
+						<lightning-layout-item key={sadetail.Id} size="3" class="slds-var-p-around_x-small">
+							<c-sa-tile sadetail={sadetail}></c-sa-tile>
+						</lightning-layout-item>
+					</template>
+				</lightning-layout>
+
+			
+			</template>
+
+			<!-- Data failed to load -->
+			<template if:true={sadetails.error}>
+				<div class="slds-text-color_error">
+					An error occurred while loading the Sales Agent list
+				</div>
+			</template>
+		</div>
+	</lightning-card>
+</template>
