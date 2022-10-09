@@ -1,13 +1,12 @@
 import { LightningElement, wire } from "lwc";
-import searchSas from "@salesforce/apex/SAManager1.searchSas";
+import getAllSA from "@salesforce/apex/SAManager1.getAllSA";
 
 
 export default class SAManageApex extends LightningElement {
 
  sadetails;
-
-  @wire (searchSas)
-  
+ 
+  @wire (getAllSA)
   loadSAdetails(result) {
     this.sadetails = result;
   }
