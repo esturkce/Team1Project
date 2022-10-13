@@ -1,4 +1,4 @@
-public with sharing class SAManager1 {
+public with sharing class SAManager {
     
     @AuraEnabled(cacheable=true scope='global')
     public static List<	SA_Detail_1__c> getAllSA(){
